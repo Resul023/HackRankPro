@@ -13,13 +13,13 @@ public class GetCreditQuery : IRequest<GetCreditDto>
 public class GetCreditDto
 {
     public string LoanPurpose { get; set; }
-    public string CreditScore { get; set; }
-    public float  CreditAmount { get; set; }
-    public float  LoanRate { get; set; }
-    public int    CreditStatus { get; set; }
-    public float  LoanPercentage { get; set; }
-    public int?   PaymentHistory { get; set; }
-    public int?   CreditHistoryLength { get; set; }
+    public int LoanTiming { get; set; }
+    public float CreditAmount { get; set; }
+    public float LoanRate { get; set; }
+    public string? CreditScore { get; set; }
+    public bool CreditStatus { get; set; }
+    public int? PaymentHistory { get; set; }
+    public int? CreditHistoryLength { get; set; }
 }
 public class GetCreditQueryHandler : IRequestHandler<GetCreditQuery, GetCreditDto>
 {

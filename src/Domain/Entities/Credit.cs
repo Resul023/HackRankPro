@@ -9,7 +9,7 @@ public class Credit : BaseAuditableEntity
     public float CreditAmount { get; set; }
     public float LoanRate { get; set; }
     public string? CreditScore { get; set; }
-    public bool CreditStatus { get; set; } = false;
+    public bool CreditStatus { get; set; } 
     public int? PaymentHistory { get; set; }
     public int? CreditHistoryLength { get; set; }
 }
