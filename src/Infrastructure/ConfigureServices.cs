@@ -1,4 +1,5 @@
-﻿using Infrastructure.Identity;
+﻿using Application.Common.Interfaces;
+using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +16,16 @@ public static class ConfigureServices
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
+        var opt = configuration.GetConnectionString("local");
         services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer(configuration.GetConnectionString("local"),
             builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
             );
+        services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
         services.AddDefaultIdentity<ApplicationUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
         services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
         return services;

@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces;
+using Domain.Entities;
 using Duende.IdentityServer.EntityFramework.Options;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
@@ -11,10 +12,12 @@ public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, 
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
         IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions) { }
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        //builder.ApplyConfiguration<Country>(new CountryConfiguration());
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        base.OnModelCreating(builder);
-    }
+
+    public DbSet<Credit> Credits { get ; set; }
+
+    //protected override void OnModelCreating(ModelBuilder builder)
+    //{
+    //    builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    //    base.OnModelCreating(builder);
+    //}
 }
