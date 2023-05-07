@@ -106,3 +106,4 @@ C:\Users\User\Desktop\CleanProject\src\WebUI\bin\Debug\net7.0\Microsoft.EntityFr
 C:\Users\User\Desktop\CleanProject\src\WebUI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\User\Desktop\CleanProject\src\WebUI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\User\Desktop\CleanProject\src\WebUI\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\User\Desktop\CleanProject\src\WebUI\bin\Debug\net7.0\Serilog.dll

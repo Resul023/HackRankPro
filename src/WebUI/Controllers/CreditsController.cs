@@ -1,6 +1,7 @@
 ﻿using Application.Credit.Commands;
 using Application.Credit.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
